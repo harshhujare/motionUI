@@ -12,7 +12,7 @@ export const Hero = () => {
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
-  const totalVideos =4;
+  const totalVideos = 4;
   const nextVref = useRef(null);
 
 
@@ -28,7 +28,13 @@ setLoadedVideos((prev) => prev + 1);
     setVideoIndex(upcomingVideoIndex);
   };
 
+useEffect(() => {
+  const timeout = setTimeout(() => {
+    setIsLoading(false);
+  }, 10000); // 10 seconds timeout
 
+  return () => clearTimeout(timeout);
+}, []);
   useEffect(()=>{
     if(loadedVideos === totalVideos-1){
       setIsLoading(false);
