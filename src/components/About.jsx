@@ -30,22 +30,22 @@ const About = () => {
     <div id="about" className="min-h-screen w-screen" >
         <div className="relative mt-36 mb-8 flex flex-col items-center gap-5" >
         <h2 className="font-general uppercase text-sm md:text-[15px]">
- welcome to our zentry
+welcome to the world of absolute cinema
         </h2>
          <AnimatedTitle
-          title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
+          title="the gretest show of all time <br />  <b>breking bad</b>"
           containerClass="mt-5 !text-black text-center"
         />
         <div className="about-subtext" >
-<p > The game of games begins your life, now epic mmrpg   </p>
-<p>zentry units every player from countless games and platforms</p>
+<p > It’s about this simple, dying chemistry teacher, Walter White </p>
+<p>it’s about pride, power, and losing everything to become the king of nothing.</p>
 
         </div>
 
         </div>
         <div className=" h-dvh w-screen " id="clip"> 
             <div className=" mask-clip-path about-image">
-                <img src="img/about.webp" alt=" background" className="absolute top-0 left-0 size-full object-cover"/>
+                <img src="img/about.jpg" alt=" background" className="absolute top-0 left-0 size-full object-cover"/>
 
             </div>
         </div>

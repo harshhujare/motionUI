@@ -12,8 +12,10 @@ export const App = () => {
 <Navbar />
 <Hero />
 <About/>
+
 <Story/>
 <Feactures/>
+
 <Footer />
 </main>
 

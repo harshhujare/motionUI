@@ -139,7 +139,7 @@ ref={nextVref}
     />
     
         </div>
-        <h1 className=" special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">G<b>A</b>MING</h1>
+        <h1 className=" special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75"><b>cinema</b></h1>
          <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="uppercase  font-zentry text-blue-75 text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[8rem]">
@@ -154,7 +154,7 @@ ref={nextVref}
           </div>
         </div>
       </div>  
-   <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">G<b>A</b>MING</h1>
+   <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black"><b>cinema</b></h1>
 
     </div>
   );

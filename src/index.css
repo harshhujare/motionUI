@@ -110,7 +110,7 @@ body {
 
   .story-img-mask {
     @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
-    clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
+    clip-path: polygon(0 9%, 90% 18%, 96% 76%, 0 90%);
   }
 
   .story-img-content {
