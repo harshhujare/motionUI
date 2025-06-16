@@ -106,9 +106,7 @@ const FloatingImage = ({btnlink}) => {
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-              Where realms converge, lies Zentry and the boundless pillar.
-              Discover its secrets and shape your fate amidst infinite
-              opportunities.
+              I want to say only one thing just watch it before you die. the cinimatograohy is so good and the story is epic till season 6 and 7
             </p>
 
             <Button src={btnlink} id="Get link" tital="get link" lefticon={<TiDownload/>} containerClass=" !bg-yellow-300 gap-1 flex-center   "    />

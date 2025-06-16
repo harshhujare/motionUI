@@ -23,7 +23,7 @@ btnlink="https://vegamovies.mk/33036-breaking-bad-2023-season-1-dual-audio-hindi
 hello="the gretest anime of all time <br />  <b>attack on titan</b>"
 imge="img/attack-on-titan.jpg"
 btnlink="https://www.vegamovies-nl.biz/download-attack-on-titan-season-1-complete-dual-audio-hindi-dubbed-org/"
-subtext={<><p>It’s about this simple, dying chemistry teacher, Walter White</p><p>this show tells you story of pride, power, and losing everything to become the king of nothing.</p></>}
+subtext={<><p>This show will tell you the actual meaning of freedom </p><p> just watch it</p></>}
 />
 <Feactures/>
 
