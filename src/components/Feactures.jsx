@@ -70,7 +70,7 @@ return (
 
     <p className="text-blue-50 font-circular-web text-lg">
 
-welcome to the world of AI, 
+welcome to the world of cinema, 
 
     </p>
 

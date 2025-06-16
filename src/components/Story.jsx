@@ -1,10 +1,10 @@
 import gsap from "gsap";
 import { useRef } from "react";
-
+import { TiDownload } from 'react-icons/ti';
 import Button from './Button.jsx';
 import AnimatedTitle from "./AnimatedTitle.jsx";
 
-const FloatingImage = () => {
+const FloatingImage = ({btnlink}) => {
   const frameRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -54,7 +54,7 @@ const FloatingImage = () => {
 
         <div className="relative size-full">
           <AnimatedTitle
-            title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
+            title="the st<b>o</b>ry of <br /> <b> seven kingdomes</b>"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
@@ -111,11 +111,7 @@ const FloatingImage = () => {
               opportunities.
             </p>
 
-            <Button
-              id="realm-btn"
-              title="discover prologue"
-              containerClass="mt-5"
-            />
+            <Button src={btnlink} id="Get link" tital="get link" lefticon={<TiDownload/>} containerClass=" !bg-yellow-300 gap-1 flex-center   "    />
           </div>
         </div>
       </div>

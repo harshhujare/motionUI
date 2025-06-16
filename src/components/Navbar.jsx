@@ -4,7 +4,7 @@ import { TiLocationArrow } from 'react-icons/ti'
 import { useRef } from 'react'
 import { useWindowScroll } from 'react-use'
 
-const navitems = ['Nexus', 'vault', 'prologue', 'about', 'contact']
+const navitems = ['Anime', 'Movies', 'Short films', 'about', 'contact']
 
 const Navbar = () => {
   const navContainerRef = useRef(null)
@@ -41,7 +41,7 @@ const Navbar = () => {
             />
             <Button 
               id="product-button" 
-              tital="Products" 
+              tital="watch anime" 
               righticon={<TiLocationArrow/>}   
               containerClass="!bg-blue-50 md:flex hidden items-center justify-center gap-1"    
             />
