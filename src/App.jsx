@@ -14,7 +14,7 @@ export const App = () => {
 <About
 hello="the gretest show of all time <br />  <b>breking bad</b>"
 imge="img/breaking-bad.jpg"
-subtext={<><p>It’s about this simple, dying chemistry teacher, Walter White</p><p>this show tells you story of pride, power, and losing everything to become the king of nothing.</p></>}
+subtext={<><p>"This isn’t just a show—it’s a descent into moral chaos, told through the eyes of a high school chemistry</p><p>teacher turned drug lord.  Meth, morals, and mind games—this is storytelling at its purest and darkest. If you haven’t seen it, you're still living in a pre-Heisenberg timeline."</p></>}
 btnlink="https://vegamovies.mk/33036-breaking-bad-2023-season-1-dual-audio-hindi-hdrip-720p-480p-episode-1-added.html"
 
 />

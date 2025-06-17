@@ -1,6 +1,6 @@
 import react, { useRef, useState } from 'react'
-
-
+import Button from './Button.jsx';
+import { TiDownload, TiLocationArrow } from 'react-icons/ti';
 const BentoTilt =({children,className=''})=>{
 const [TransformStyle,setTransformStyle]=useState('')
 const itemRef =useRef();
@@ -37,19 +37,18 @@ return(
 
 
 
-        const BentoCard=({src, tital, descrption}) => {
+        const BentoCard=({src, tital, descrption,btnlink}) => {
 
         return(
         <div className="size-full relaive ">
-        <video className="absolute top-0 left-0 size-full object-cover object-center"
-        loop
-        autoPlay
-        muted
+        <img className="absolute top-0 left-0 size-full object-cover object-center"
+        
         src={src}/>
 <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50 ">
 <div>
     <h1 className="bento-title special-font" > {tital }</h1>
     {descrption && (<p className="mt-3 text-xs max-w-64 md:text-base"> {descrption}</p>)}
+    <Button  src={btnlink} id="Get link" tital="get link" lefticon={<TiDownload/>} containerClass=" !bg-yellow-300 gap-1 flex-center top-5  "    />
 </div>
 
 
@@ -75,17 +74,19 @@ welcome to the world of cinema,
     </p>
 
 <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-  welcome to the world of cinema where the nman
+Here, we feature only the finest films in each category. Curated, not crowded.
 </p>
 
 </div>
 
 <BentoTilt className="border-hsla relative mb-7 h-96 rounded-md md:h-[65vh] w-full overflow-hidden">
 <BentoCard  
-src="videos/feature-1.mp4"
-tital={<>radia<b>n</b>t</>}
-descrption="A platform for AI enthusiasts to explore and innovate. which is a platform for AI enthusiasts to explore and innovate. It provides a space for developers and enthusiasts to come together, share ideas, and push the boundaries of artificial intelligence. "
+src="img/gvf.webp"
+tital={<><b>Grave of the fire flies</b></>}
+descrption="This isn’t a movie. It’s a quiet scream. A story so tender and tragic, it doesn’t break your heart all at once—it shatters it in slow motion. Set in the ashes of war, it follows two siblings clinging to each other as the world forgets them. No heroes. No victories. Just love, loss, and the kind of silence that lingers long after the credits roll. "
+btnlink="https://www.vegamovies-nl.biz/download-grave-of-the-fireflies-1988-hindi-dubbed/"
 />
+
 </BentoTilt>
 <div className="grid h-[100vh] w-full grid-cols-2 grid-rows-3 gap-7">
 
@@ -93,28 +94,28 @@ descrption="A platform for AI enthusiasts to explore and innovate. which is a pl
 <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
 
 <BentoCard  
-src="videos/feature-2.mp4" 
-tital={<> <b>ZigmA</b></>}
-descrption="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-
+src="img/alicein.webp" 
+tital={<> <b>Alice in borderland</b></>}
+descrption="Alice in Borderland is a gripping mix of psychological thrills and deadly games, keeping you hooked with every twist. at first it feels like squid games but its very brutal than that"
+btnlink="https://www.vegamovies-nl.biz/download-alice-in-borderland-netflix-original-2022-season-1-dual-audio/"
 />
 
 </BentoTilt>
 
 <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
 <BentoCard  
-src="videos/feature-3.mp4" 
-tital={<> <b>Azul</b></>}
-descrption="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-
+src="img/dark.webp" 
+tital={<> <b>dark</b></>}
+descrption="Dark is a mind-bending German sci-fi thriller that weaves time travel."
+btnlink="https://www.vegamovies-nl.biz/download-dark-season-1-3-english-with-subtitles-netflix-series-complete/"
 />
 
 </BentoTilt>
 <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
 <BentoCard  
-src="videos/feature-4.mp4" 
-tital={<> <b>Nexus</b></>}
-descrption=" cross-world AI Agent - elevating your gameplay to be more fun and productive."
+src="img/death.webp" 
+tital={<> <b>Death Note</b></>}
+descrption=" Smart guy gets a god-like notebook. Moral grey zones everywhere."
 
 />
 
@@ -125,6 +126,8 @@ descrption=" cross-world AI Agent - elevating your gameplay to be more fun and p
 
 </div>
 </div>
+
+
 </section>
 
 )

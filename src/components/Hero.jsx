@@ -147,7 +147,7 @@ ref={nextVref}
             </h1>
 
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100 uppercase">
-              explore the world of epic cinema<br/> whatch movies and tv shows that hits different
+            "Not a fan of typical South movies ? You're in the right place. This site features only the best of the best in every category—handpicked!"
             </p>
 <Button id="watch-trailar" tital="Watch Trailer" lefticon={<TiLocationArrow/>} containerClass=" !bg-yellow-300 gap-1 flex-center  "    />
            

@@ -49,7 +49,7 @@ const FloatingImage = ({btnlink}) => {
     <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          the multiversal ip world
+          (this is the second gretestshow of all time)
         </p>
 
         <div className="relative size-full">
@@ -106,7 +106,7 @@ const FloatingImage = ({btnlink}) => {
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-              I want to say only one thing just watch it before you die. the cinimatograohy is so good and the story is epic till season 6 and 7
+             Before the final season turned into a meme, this was peak TV—dragons, betrayal, and medieval politics soaked in wine and blood. Watch it for the ride, not the destination."
             </p>
 
             <Button src={btnlink} id="Get link" tital="get link" lefticon={<TiDownload/>} containerClass=" !bg-yellow-300 gap-1 flex-center   "    />
