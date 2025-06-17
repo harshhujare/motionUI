@@ -75,7 +75,7 @@ welcome to the world of cinema,
     </p>
 
 <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-    welcome to the world of AI, where innovation meets creativity. Our platform is designed to empower developers and enthusiasts alike, providing cutting-edge tools and resources to harness the power of artificial intelligence. Whether you're building intelligent applications, exploring machine learning algorithms, or diving into data science, we have everything you need to succeed. Join us on this exciting journey and unlock the potential of AI today!   
+  welcome to the world of cinema where the nman
 </p>
 
 </div>
