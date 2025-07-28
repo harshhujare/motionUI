@@ -4,10 +4,12 @@ import { TiLocationArrow } from 'react-icons/ti'
 import { useRef } from 'react'
 import { useWindowScroll } from 'react-use'
 import { Link } from "react-router-dom";
+import { useAuth } from '../hooks/useAuth'
 
 const navitems = ['Anime', 'Movies', 'Short films', 'about', 'Account']
 
 const Navbar = () => {
+  const { user, signOut } = useAuth()
   const navContainerRef = useRef(null)
   const { y: currentScrollY } = useWindowScroll()
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -52,9 +54,18 @@ const Navbar = () => {
           <div className="flex h-full items-center">
             <div className='hidden md:block'>
               {navitems.map((item) => (
-             
-                 <Link className="nav-hover-btn"  to={`/${item.toLowerCase()}`}> {item}</Link>
+                <Link key={item} className="nav-hover-btn" to={`/${item.toLowerCase()}`}>
+                  {item}
+                </Link>
               ))}
+              {user && (
+                <button
+                  onClick={signOut}
+                  className="nav-hover-btn ml-10 text-red-400 hover:text-red-300"
+                >
+                  Sign Out
+                </button>
+              )}
             </div>
           </div>
         </nav>

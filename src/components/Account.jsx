@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 import Button from './Button'
 import { TiLocationArrow } from 'react-icons/ti'
 import { FiEye, FiEyeOff, FiUser, FiMail, FiLock } from 'react-icons/fi'
+import { useAuth } from '../hooks/useAuth'
+import { useNavigate } from 'react-router-dom'
 
 const Account = () => {
+  const { user, loading, error, signUp, signIn, signOut } = useAuth()
+  const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(true)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -21,10 +27,79 @@ const Account = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSuccessMessage('')
+
+    try {
+      if (isLogin) {
+        const { error } = await signIn(formData.email, formData.password)
+        if (!error) {
+          setSuccessMessage('Successfully signed in!')
+          setTimeout(() => navigate('/'), 1500)
+        }
+      } else {
+        if (formData.password !== formData.confirmPassword) {
+          throw new Error('Passwords do not match')
+        }
+        const { error } = await signUp(formData.email, formData.password, formData.username)
+        if (!error) {
+          setSuccessMessage('Account created successfully! Please check your email to verify your account.')
+        }
+      }
+    } catch (err) {
+      console.error('Auth error:', err)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleSignOut = async () => {
+    await signOut()
+    navigate('/')
+  }
+
+  // If user is already logged in, show profile
+  if (user) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md text-center">
+          <div className="bg-blue-200/10 border border-white/20 rounded-lg p-8">
+            <h1 className="special-font font-zentry font-black text-4xl text-blue-50 mb-4">
+              WELCOME
+            </h1>
+            <div className="space-y-4 text-blue-50">
+              <p className="font-circular-web">
+                <span className="text-blue-50/70">Email:</span> {user.email}
+              </p>
+              {user.user_metadata?.username && (
+                <p className="font-circular-web">
+                  <span className="text-blue-50/70">Username:</span> {user.user_metadata.username}
+                </p>
+              )}
+              <p className="font-circular-web text-sm text-blue-50/60">
+                Member since: {new Date(user.created_at).toLocaleDateString()}
+              </p>
+            </div>
+            <div className="mt-8 space-y-4">
+              <Button
+                tital="Back to Home"
+                lefticon={<TiLocationArrow />}
+                containerClass="w-full !bg-blue-300 gap-2 flex-center justify-center py-4 text-base font-medium"
+                src="/"
+              />
+              <button
+                onClick={handleSignOut}
+                className="w-full py-3 px-4 bg-red-600/20 border border-red-500/30 rounded-lg text-red-400 font-circular-web hover:bg-red-600/30 transition-all duration-300"
+              >
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -39,6 +114,27 @@ const Account = () => {
             {isLogin ? 'Sign in to continue your journey' : 'Create your account to get started'}
           </p>
         </div>
+
+        {/* Loading State */}
+        {loading && (
+          <div className="text-center mb-4">
+            <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-yellow-300"></div>
+          </div>
+        )}
+
+        {/* Error Message */}
+        {error && (
+          <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-6">
+            <p className="text-red-400 font-circular-web text-sm text-center">{error}</p>
+          </div>
+        )}
+
+        {/* Success Message */}
+        {successMessage && (
+          <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4 mb-6">
+            <p className="text-green-400 font-circular-web text-sm text-center">{successMessage}</p>
+          </div>
+        )}
 
         {/* Tab Switcher */}
         <div className="flex bg-blue-200/10 rounded-lg p-1 mb-8 border border-white/20">
@@ -157,11 +253,35 @@ const Account = () => {
           )}
 
           {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isSubmitting || loading}
+            className={`w-full py-4 px-6 rounded-lg font-general text-sm uppercase transition-all duration-300 flex items-center justify-center gap-2 ${
+              isSubmitting || loading
+                ? 'bg-yellow-300/50 text-black/50 cursor-not-allowed'
+                : 'bg-yellow-300 text-black hover:bg-yellow-100'
+            }`}
+          >
+            {isSubmitting || loading ? (
+              <>
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-black"></div>
+                {isLogin ? 'Signing In...' : 'Creating Account...'}
+              </>
+            ) : (
+              <>
+                <TiLocationArrow />
+                {isLogin ? 'Sign In' : 'Create Account'}
+              </>
+            )}
+          </button>
+
+          {/* Old Button component - keeping as backup
           <Button
             tital={isLogin ? "Sign In" : "Create Account"}
             lefticon={<TiLocationArrow />}
             containerClass="w-full !bg-yellow-300 gap-2 flex-center justify-center py-4 text-base font-medium"
           />
+          */}
 
           {/* Divider */}
           <div className="relative my-6">
