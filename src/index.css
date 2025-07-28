@@ -14,27 +14,27 @@ body {
 @layer base {
   @font-face {
     font-family: "circular-web";
-    src: url("/public/fonts/circularweb-book.woff2") format("woff2");
+    src: url("/fonts/circularweb-book.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "general";
-    src: url("/public/fonts/general.woff2") format("woff2");
+    src: url("/fonts/general.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "robert-medium";
-    src: url("/public/fonts/robert-medium.woff2") format("woff2");
+    src: url("/fonts/robert-medium.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "robert-regular";
-    src: url("/public/fonts/robert-regular.woff2") format("woff2");
+    src: url("/fonts/robert-regular.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "zentry";
-    src: url("/public/fonts/zentry-regular.woff2") format("woff2");
+    src: url("/fonts/zentry-regular.woff2") format("woff2");
   }
 }
 

@@ -3,8 +3,9 @@ import Button from './Button'
 import { TiLocationArrow } from 'react-icons/ti'
 import { useRef } from 'react'
 import { useWindowScroll } from 'react-use'
+import { Link } from "react-router-dom";
 
-const navitems = ['Anime', 'Movies', 'Short films', 'about', 'contact']
+const navitems = ['Anime', 'Movies', 'Short films', 'about', 'Account']
 
 const Navbar = () => {
   const navContainerRef = useRef(null)
@@ -16,14 +17,15 @@ const Navbar = () => {
     if (currentScrollY === 0) {
       setIsVisible(true)
       navContainerRef.current?.classList.remove('floating-nav')
-    } else if (currentScrollY > lastScrollY) {
+    } else if (currentScrollY < lastScrollY) {
       setIsVisible(false)
       navContainerRef.current?.classList.add('floating-nav')
-    } else if (currentScrollY < lastScrollY) {
+    } else if (currentScrollY > lastScrollY) {
       setIsVisible(true)
       navContainerRef.current?.classList.add('floating-nav')
     }
     setLastScrollY(currentScrollY)
+    
   }, [currentScrollY, lastScrollY])
 
   return (
@@ -41,7 +43,7 @@ const Navbar = () => {
             />
             <Button 
               id="product-button" 
-              tital="watch anime" 
+              tital="Request movies" 
               righticon={<TiLocationArrow/>}   
               containerClass="!bg-blue-50 md:flex hidden items-center justify-center gap-1"    
             />
@@ -50,13 +52,8 @@ const Navbar = () => {
           <div className="flex h-full items-center">
             <div className='hidden md:block'>
               {navitems.map((item) => (
-                <a 
-                  key={item}
-                  className="nav-hover-btn" 
-                  href={`#${item.toLowerCase()}`}
-                >
-                  {item} 
-                </a>
+             
+                 <Link className="nav-hover-btn"  to={`/${item.toLowerCase()}`}> {item}</Link>
               ))}
             </div>
           </div>

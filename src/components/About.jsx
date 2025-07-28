@@ -8,7 +8,7 @@ import Button from './Button.jsx';
 gsap.registerPlugin(ScrollTrigger);
 
 const About = ({hello ,subtext,btnlink,imge}) => {
-  const containerRef = useRef(); // 🔥 one ref to rule them all
+  const containerRef = useRef(); 
 
   useGSAP(() => {
     const triggerElem = containerRef.current.querySelector('.clip-section');
@@ -30,7 +30,7 @@ const About = ({hello ,subtext,btnlink,imge}) => {
       height: '100vh',
       borderRadius: 0,
     });
-  }, { scope: containerRef }); // 🧠 very important for scoping to THIS instance only
+  }, { scope: containerRef }); 
 
   return (
     <div ref={containerRef} className="min-h-screen w-screen">
